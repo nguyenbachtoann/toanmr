@@ -1,0 +1,33 @@
+@mixin flexJustifyAndAlignWithFont($font, $flex, $align) {
+  font-size: $font;
+  display: flex;
+  justify-content: $flex;
+  align-items: $align;
+}
+@mixin imageFullSizeWithBorderRadius($borderRadius) {
+  height: 100%;
+  width: 100%;
+  border-radius: $borderRadius;
+}
+@mixin linkTagHoverNoColorEffect($staticColor, $hoverColor) {
+  a {
+    color: $staticColor;
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+
+@mixin hoverMoveUp() {
+  position: relative;
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 20px 20px 60px -20px $shadowColor;
+  }
+}
+
+
+@mixin clearFix () {
+  clear: both;
+}
+

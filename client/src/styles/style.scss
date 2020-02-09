@@ -1,0 +1,693 @@
+// styles
+@import "variables";
+@import "mixins";
+
+.animated {
+  animation-duration: 0.5 !important;
+}
+#fullpage-loading-img {
+  width: 100%;
+  height: 100vh;
+}
+
+// flexJustifyAndAlignWithFont(a,b,c) , a is font-size, b is justify-content and c is align-items
+
+.font-bold {
+  font-weight: 600;
+}
+
+#img-menu {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+#main-menu {
+  @include flexJustifyAndAlignWithFont($fontMedium, flex-end, unset);
+  border: none;
+  line-height: 80px;
+  // selected menu
+  li {
+    border-bottom: none;
+    .anticon {
+      font-size: $fontMedium;
+    }
+  }
+}
+
+.menu-title {
+  line-height: 80px;
+  color: black;
+  font-size: $fontMedium;
+  display: flex;
+  align-items: center;
+}
+
+#home-banner {
+  @include flexJustifyAndAlignWithFont(unset, flex-start, unset);
+  img {
+    @include imageFullSizeWithBorderRadius(unset);
+  }
+}
+
+.home-body {
+  margin-bottom: 50px;
+}
+
+#home-introduction {
+  margin-top: 50px;
+}
+
+.introduction-wrapper {
+  @include flexJustifyAndAlignWithFont($fontMedium, flex-end, center);
+  font-weight: $fontWeightSmall;
+  flex-direction: column;
+  .intro-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .intro-content {
+    text-align: center;
+  }
+}
+.title-span {
+  font-size: $fontXXLarge;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.loading-data {
+  // margin-top: 30px;
+  color: $primaryColor !important;
+}
+.weather-wrapper {
+  #weather-container {
+    @include flexJustifyAndAlignWithFont($fontMedium, flex-start, center);
+    font-weight: $fontWeightSmall;
+    flex-direction: column;
+    .weather-content {
+      width: 100%;
+      .weather-description {
+        width: 100%;
+        @include flexJustifyAndAlignWithFont(unset, space, center);
+        flex-direction: column;
+      }
+
+      .weather-title-divide {
+        width: 25%;
+        padding-top: 10px;
+        @include flexJustifyAndAlignWithFont(unset, space-around, center);
+      }
+
+      .weather-celcius {
+        font-size: $fontExtraLarge;
+      }
+      .weather-place {
+        margin-top: 20px;
+        font-size: $fontExtraLarge;
+      }
+    }
+  }
+}
+
+.intro-contact {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.text-title-thin {
+  text-underline-position: below;
+  font-size: $fontLarge;
+  font-weight: 600;
+}
+
+.button-group {
+  margin-bottom: 20px;
+  width: 100%;
+  @include flexJustifyAndAlignWithFont(unset, center, unset);
+  .button-wrapper {
+    width: 100%;
+    @include flexJustifyAndAlignWithFont(unset, center, unset);
+    .button-wrapper-row {
+      width: 50%;
+      @include flexJustifyAndAlignWithFont(unset, space-around, unset);
+      @include linkTagHoverNoColorEffect(inherit, inherit);
+      .button-instagram {
+        color: white;
+        background: #f09433;
+        background: -moz-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        background: -webkit-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      }
+      .button-facebook {
+        color: white;
+        background-color: #1778f2;
+        @include linkTagHoverNoColorEffect(unset, white);
+      }
+      button {
+        &:hover {
+          box-shadow: 0 6px 6px -6px gray;
+        }
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.ant-col .button-wrapper-col {
+  @include flexJustifyAndAlignWithFont(unset, center, unset);
+}
+
+.hobbies-col {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.hobbies-item {
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px -30px $shadowColor;
+  margin: 20px;
+  @include hoverMoveUp();
+}
+
+.hobbies-title {
+  @include flexJustifyAndAlignWithFont(unset, center, unset);
+  margin-bottom: 20px;
+}
+
+#hobbies-tweenone {
+  // float: left;
+  width: 100%;
+  opacity: 0;
+  margin-bottom: 50px;
+  img {
+    @include imageFullSizeWithBorderRadius(20px);
+  }
+}
+
+.hobbies-img-container {
+  height: 70%;
+}
+.hobbies-content-container {
+  border-radius: 20px;
+  height: 30%;
+  @include flexJustifyAndAlignWithFont(unset, center, center);
+  span {
+    font-size: $fontLarge;
+    font-weight: $fontWeightRegular;
+  }
+}
+
+.hobbies-queue {
+  position: relative;
+  margin-bottom: 10;
+  @include flexJustifyAndAlignWithFont(unset, center, unset);
+}
+#hobbies-overpack {
+  overflow: hidden;
+}
+.infor-title {
+  font-size: $fontExtraLarge;
+  font-weight: $fontWeightLarge;
+}
+.infor-description-container {
+  @include clearFix();
+  text-align: center;
+  .infor-description {
+    font-size: $fontMedium;
+    font-weight: $fontWeightSmall;
+  }
+}
+
+footer {
+  height: 80px;
+  @include clearFix();
+  .footer-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    @include flexJustifyAndAlignWithFont($fontSmall, center, center);
+    span {
+      font-weight: $fontWeightSmall;
+    }
+  }
+}
+
+// To do
+
+#todo-container {
+  // background-color: #1778f2;
+  width: 100%;
+}
+.ant-modal .ant-modal-content {
+  border-radius: 20px;
+  .ant-modal-header {
+    border-radius: 20px 20px 0 0;
+  }
+}
+#todo-wrapper {
+  .todos-list-options-menu {
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+  }
+  .todo-priorities {
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+  }
+}
+
+.todo-title {
+  height: 100px;
+  @include flexJustifyAndAlignWithFont(unset, center, center);
+}
+
+.priorities-wrapper {
+  margin-top: 10px;
+  width: 20%;
+  @include flexJustifyAndAlignWithFont(unset, space-around, flex-start);
+  .priorities {
+    margin-bottom: 40px;
+    @include flexJustifyAndAlignWithFont($fontMedium, center, center);
+    div {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+    }
+    span {
+      margin-right: 20px;
+    }
+  }
+}
+
+.list-item {
+  // background-color: white;
+  // @include flexJustifyAndAlignWithFont(unset, center, unset);
+  border-radius: 30px;
+  box-shadow: 20px 20px 40px -30px $shadowColor;
+  padding: 20px;
+  margin-bottom: 20px;
+  .list-item-title {
+    transition: text-overflow 0.6s, overflow 0.6s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+  }
+  .list-description {
+    margin-bottom: 10px;
+  }
+  position: relative;
+  transition: box-shadow 0.5s linear;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 20px 20px 60px -20px $shadowColor;
+  }
+  #btn-task-box-delete {
+    float: right;
+    transition: visibility 0.6s, opacity 0.6s linear;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .todos-divider,
+  .list-tasks-options {
+    transition: margin-top 0.6s, visibility 0.6s, opacity 0.6s linear;
+    margin-top: -20px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .todos-tags {
+    transition: margin-top 0.6s, visibility 0.6s, opacity 0.6s linear;
+    margin-top: -50px;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+#hidden-item {
+  transition: height 0.8s, visibility 2s, opacity 2s, overflow 0.6s,
+    margin-top 0.6s linear;
+  visibility: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+  margin-top: 0;
+  .todos-col {
+    @include flexJustifyAndAlignWithFont($fontMedium, flex-start, flex-start);
+    .todos-checkbox {
+      margin-right: 10px;
+    }
+  }
+  label {
+    margin-top: 5px;
+  }
+  .color-props {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+}
+.color-props {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+#hidden-item::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+#hidden-item::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+#hidden-item::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: gray;
+}
+
+.list-col {
+  transition: width 0.6s;
+  // max-height: auto;
+  &:focus-within {
+    width: 30%;
+    outline: 0;
+    .list-item {
+      position: relative;
+      box-shadow: 20px 20px 60px -20px $shadowColor;
+    }
+    #btn-task-box-cancel {
+      visibility: visible;
+      opacity: 1;
+    }
+    .list-item-title {
+      @include flexJustifyAndAlignWithFont($fontExtraLarge, center, flex-start);
+    }
+    .list-description {
+      @include flexJustifyAndAlignWithFont($fontLarge, center, flex-start);
+    }
+    .list-tasks-options,
+    .todos-divider {
+      margin-top: 20px;
+      visibility: visible;
+      opacity: 1;
+    }
+    .todos-tags {
+      margin-top: 0px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #hidden-item {
+      height: 250px;
+      visibility: visible;
+      opacity: 1;
+      overflow: auto;
+      margin-top: 30px;
+
+      // @include flexJustifyAndAlignWithFont($fontMedium, center, unset);
+    }
+  }
+
+  .list-item-title,
+  .list-description,
+  .list-tasks-count {
+    @include flexJustifyAndAlignWithFont(unset, center, unset);
+    span{
+      text-align: center;
+    }
+    transition: font-size 0.6s;
+  }
+}
+
+.content-span {
+  font-size: $fontMedium;
+  font-weight: $fontWeightSmall;
+}
+.date-time {
+  // font-size: $fontMedium;
+  font-weight: $fontWeightRegular;
+  color: darkgray;
+}
+
+// .faded-primary
+.btn-faded-color {
+  box-shadow: none !important;
+  border: none !important;
+}
+.todo-modal {
+  .modal-input-group {
+    margin: 10px;
+    input {
+      border: none;
+    }
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+  }
+  .todos-tag {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .faded-primary {
+    &:hover {
+      background: $secondaryColor;
+    }
+
+    i,
+    span {
+      color: $primaryColor;
+    }
+  }
+  .faded-danger {
+    &:hover {
+      background: $dangerSecondaryColor;
+    }
+
+    i,
+    span {
+      color: $dangerColor;
+    }
+  }
+  .task-input-item {
+    input {
+      border: none;
+    }
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .modal-priorities {
+    i {
+      margin-left: 5px;
+    }
+  }
+
+  .modal-priorities,
+  .modal-btn-cancel-container {
+    height: 100%;
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+  }
+}
+
+
+.btn-delete {
+  cursor: pointer;
+}
+// #todo-create-priority-menu {
+//     .color-props {
+//       margin-left: 10px;
+//     }
+// }
+// Radio
+
+#radio-container {
+  width: 100%;
+  background-image: url("../assets/images/radio-background.jpg");
+  background-repeat: repeat;
+  margin-bottom: 50px;
+  border-radius: 30px;
+}
+
+.radio-title {
+  width: 100%;
+  height: 200px;
+  @include flexJustifyAndAlignWithFont(unset, center, center);
+  .title-wrapper {
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+
+    width: 60%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 30px 30px 40px -35px black;
+    text-align: center;
+    span {
+      color: blue;
+    }
+  }
+}
+
+.video-wrapper {
+  @include flexJustifyAndAlignWithFont(unset, center, unset);
+  position: relative;
+  padding-bottom: 35%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+  }
+  iframe {
+    border-radius: 30px;
+    box-shadow: 30px 30px 40px -30px black;
+  }
+}
+
+.list-videos-container {
+  padding-bottom: 100px;
+  @include flexJustifyAndAlignWithFont(unset, center, center);
+  width: 100%;
+  .list-videos-wrapper {
+    text-align: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    width: 60%;
+    box-shadow: 30px 30px 40px -35px black;
+    @include flexJustifyAndAlignWithFont(unset, center, center);
+    .list-videos-title {
+      span {
+        color: blue;
+      }
+    }
+    .list-videos {
+      width: 90%;
+      text-align: center;
+      height: 350px;
+      overflow-y: scroll;
+
+      @include flexJustifyAndAlignWithFont(unset, center, center);
+      .list-video-items {
+        height: 60px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 5px;
+        width: 90%;
+
+        @include flexJustifyAndAlignWithFont($fontLarge, center, center);
+        .ant-col {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+.videos-container-inner {
+  @include flexJustifyAndAlignWithFont(unset, center, center);
+  padding-bottom: 50px;
+  padding-top: 30px;
+  width: 70%;
+}
+
+.list-videos::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  margin-top: 10px;
+}
+
+.list-videos::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+.list-videos::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+}
+
+// media to make shits fit its place
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .title-span {
+    font-size: $fontExtraLarge !important;
+  }
+  .radio-title {
+    .title-wrapper {
+      box-shadow: 30px 30px 40px -35px black;
+      width: 90%;
+    }
+  }
+
+  .video-wrapper {
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .radio-title {
+    .title-wrapper {
+      box-shadow: 30px 30px 40px -35px black;
+      span {
+        font-size: $fontExtraLarge !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .radio-title {
+    .title-wrapper {
+      width: 90%;
+      box-shadow: 30px 30px 40px -35px black;
+    }
+  }
+
+  .video-wrapper {
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1580px) {
+  .button-wrapper-row {
+    width: 65% !important;
+  }
+  .title-span {
+    font-size: $fontExtraLarge !important;
+  }
+}
